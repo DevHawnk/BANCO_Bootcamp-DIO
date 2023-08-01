@@ -14,31 +14,30 @@ public class ProjetoHawnkBank {
 			int opcao;
 			char continuar;
 			char voltaMenu;
-			double saldoPoup = 10000.00; // Criamos essa var para testar outro metodo de armazenar saldo.
+			double saldoPoup = 10000.00; 
 			int numero = 100000;
 
-			numero = (int) (Math.random() * 99999); // sorteia n�mero aleatorio para o numero de conta.
+			numero = (int) (Math.random() * 99999); 
 			
-			// instanciando as contas de acordo com as subclasses
+		
 			ContaPoupanca poupanca = new ContaPoupanca(numero, saldoPoup, 14);
 			ContaCorrente corrente = new ContaCorrente(numero, 0, 3);
-			// fim das instancias de conta.
+		
 
 			// nome e slogan.
 			System.out.println("Hawnk Bank");
 			System.out.println("Seu dinheiro aqui tem mais valor!\n");
 
-			for (int y = 0; y < 10000; y++) { // super for, controla todo o c�digo, reserva os valores dentros dos
-												// atributos.
+			for (int y = 0; y < 10000; y++) { 
 
-				for (int x = 0; x < 3; x++) { // for do MENU roda as 3 op��o.
+				for (int x = 0; x < 3; x++) {
 					System.out.println((x + 1) + "-" + menu[x] + "\n");
 				}
 
 				System.out.println("\nEscolha a opcao desejada:");
 				opcao = leia.nextInt();
 
-				if (opcao <= 0 || opcao > 3) { // op��o fora do que existe no menu.
+				if (opcao <= 0 || opcao > 3) { 
 					System.out.println("Opcao invalida.");
 					System.out.println("Deseja voltar ao Menu? S-Sim ou N-N�o");
 					voltaMenu = leia.next().toUpperCase().charAt(0);
@@ -53,7 +52,7 @@ public class ProjetoHawnkBank {
 					} break;
 
 				}
-				// CONTA POUPAN�A
+				// CONTA PP
 				else if (opcao == 1) {
 					int interacao = 1;
 
@@ -61,7 +60,7 @@ public class ProjetoHawnkBank {
 					poupanca.inicioPoupanca();
 
 					for (int x = 0; x <= 9; x++) {
-						System.out.println("Movimento " + (x + 1)); // mostra o movimento que est� sendo feito.
+						System.out.println("Movimento " + (x + 1)); 
 						System.out.println("Qual operacao voce deseja efetuar? C-Cr�dito ou D-D�bito");
 						char op = leia.next().toUpperCase().charAt(0);
 						System.out.println("Qual valor da operacao?");
